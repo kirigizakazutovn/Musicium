@@ -13,7 +13,7 @@ module.exports = {
 	category: "Song",
 	usage: "grab",
 	aliases: ["take", "steal"],
-	description: "Jumps to a specific Position in the Song", //the command description for Slash Command Overview
+	description: "Chuyển đến vị trí cụ thể của bài hát", //the command description for Slash Command Overview
 	cooldown: 10,
 	requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 	alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -50,7 +50,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`${client.allEmojis.x} Join __my__ Voice Channel!`)
+						.setTitle(`${client.allEmojis.x} Tham gia kênh thoại của __của toi__ để sử dụng lệnh này`)
 						.setDescription(`<#${guild.me.voice.channel.id}>`)
 					],
 				});
@@ -70,26 +70,26 @@ module.exports = {
 						new MessageEmbed().setColor(ee.color)
 						.setTitle(newTrack.name)
 						.setURL(newTrack.url)
-						.addField(`💡 Requested by:`, `>>> ${newTrack.user}`, true)
-						.addField(`⏱ Duration:`, `>>> \`${newQueue.formattedCurrentTime} / ${newTrack.formattedDuration}\``, true)
-						.addField(`🌀 Queue:`, `>>> \`${newQueue.songs.length} song(s)\`\n\`${newQueue.formattedDuration}\``, true)
-						.addField(`🔊 Volume:`, `>>> \`${newQueue.volume} %\``, true)
-						.addField(`♾ Loop:`, `>>> ${newQueue.repeatMode ? newQueue.repeatMode === 2 ? `${client.allEmojis.check_mark} \`Queue\`` : `${client.allEmojis.check_mark} \`Song\`` : `${client.allEmojis.x}`}`, true)
-						.addField(`↪️ Autoplay:`, `>>> ${newQueue.autoplay ? `${client.allEmojis.check_mark}` : `${client.allEmojis.x}`}`, true)
-						.addField(`❔ Download Song:`, `>>> [\`Click here\`](${newTrack.streamURL})`, true)
-						.addField(`❔ Filter${newQueue.filters.length > 0 ? "s": ""}:`, `>>> ${newQueue.filters && newQueue.filters.length > 0 ? `${newQueue.filters.map(f=>`\`${f}\``).join(`, `)}` : `${client.allEmojis.x}`}`, newQueue.filters.length > 1 ? false : true)
+						.addField(`💡 Yêu cầu bởi:`, `>>> ${newTrack.user}`, true)
+						.addField(`⏱ Thời hạn:`, `>>> \`${newQueue.formattedCurrentTime} / ${newTrack.formattedDuration}\``, true)
+						.addField(`🌀 Hàng đợi:`, `>>> \`${newQueue.songs.length} song(s)\`\n\`${newQueue.formattedDuration}\``, true)
+						.addField(`🔊 Âm lượng:`, `>>> \`${newQueue.volume} %\``, true)
+						.addField(`♾ Vòng lặp:`, `>>> ${newQueue.repeatMode ? newQueue.repeatMode === 2 ? `${client.allEmojis.check_mark} \`Queue\`` : `${client.allEmojis.check_mark} \`Song\`` : `${client.allEmojis.x}`}`, true)
+						.addField(`↪️ Tự động phát:`, `>>> ${newQueue.autoplay ? `${client.allEmojis.check_mark}` : `${client.allEmojis.x}`}`, true)
+						.addField(`❔ Tải bài hát:`, `>>> [\`Click here\`](${newTrack.streamURL})`, true)
+						.addField(`❔ Bộ lọc : ${newQueue.filters.length > 0 ? "s": ""}:`, `>>> ${newQueue.filters && newQueue.filters.length > 0 ? `${newQueue.filters.map(f=>`\`${f}\``).join(`, `)}` : `${client.allEmojis.x}`}`, newQueue.filters.length > 1 ? false : true)
 						.setThumbnail(`https://img.youtube.com/vi/${newTrack.id}/mqdefault.jpg`)
-						.setFooter(`Played in: ${guild.name}`, guild.iconURL({
+						.setFooter(`Đang phát ở: ${guild.name}`, guild.iconURL({
 							dynamic: true
 						})).setTimestamp()
 					]
 				}).then(() => {
 					message.reply({
-						content: `📪 **Grabbed! Check your Dms!**`,
+						content: `📪 **Thành công! Kiểm tra DMs của bạn!**`,
 					})
 				}).catch(() => {
 					message.reply({
-						content: `${client.allEmojis.x} **I can't dm you!**`,
+						content: `${client.allEmojis.x} **Vui lòng kiểm tra DMs của bạn đã bật chưa!!**`,
 					})
 				})
 			} catch (e) {
