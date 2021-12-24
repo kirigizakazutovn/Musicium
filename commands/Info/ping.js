@@ -28,7 +28,7 @@ module.exports = {
         channel
       } = member.voice;
       await message.reply({
-          content: `${client.allEmojis.loading} Getting the Bot Ping...`,
+          content: `${client.allEmojis.loading} Đang lấy dữ liệu,xin vui lòng chờ!`,
           ephemeral: true
         })
         .then(newMsg => newMsg.edit({
