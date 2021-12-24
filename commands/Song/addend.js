@@ -13,7 +13,7 @@ module.exports = {
 	category: "Song",
 	usage: "addend",
 	aliases: ["adde"],
-	description: "Adds this Song back to the end of the Queue!", //the command description for Slash Command Overview
+	description: "Thêm bài hát đã bị loại bỏ ra khỏi hàng đợi trở lại hàng đợi!", //the command description for Slash Command Overview
 	cooldown: 15,
 	requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 	alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -41,7 +41,7 @@ module.exports = {
 			} = member.voice;
 			if (!channel) return message.reply({
 				embeds: [
-					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Please join ${guild.me.voice.channel ? "__my__" : "a"} VoiceChannel First!**`)
+					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Vui lòng tham gia ${guild.me.voice.channel ? "__my__" : "a"} kênh thoại trước!!**`)
 				],
 
 			})
@@ -50,7 +50,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`${client.allEmojis.x} Join __my__ Voice Channel!`)
+						.setTitle(`${client.allEmojis.x} Tham gia kênh thoại của __toi__!`)
 						.setDescription(`<#${guild.me.voice.channel.id}>`)
 					],
 				});
@@ -59,7 +59,7 @@ module.exports = {
 				let newQueue = client.distube.getQueue(guildId);
 				if (!newQueue || !newQueue.songs || newQueue.songs.length == 0) return message.reply({
 					embeds: [
-						new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **I am nothing Playing right now!**`)
+						new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Tôi không phát bất cứ thứ gì bây giờ!**`)
 					],
 
 				})
