@@ -15,7 +15,7 @@ module.exports = {
 	usage: "clear",
 	aliases: ["clearfilters", "clearf", "cfilters", "cfilter", "clearfilter"],
 
-	description: "Clears all Filters", //the command description for Slash Command Overview
+	description: "Loại bỏ các bộ lọc đã thiết lập", //the command description for Slash Command Overview
 	cooldown: 5,
 	requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 	alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -31,7 +31,7 @@ module.exports = {
 			} = member.voice;
 			if (!channel) return message.reply({
 				embeds: [
-					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Please join ${guild.me.voice.channel ? "__my__" : "a"} VoiceChannel First!**`)
+					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Vui lòng tham gi ${guild.me.voice.channel ? "__my__" : "a"} kênh thoại trước!**`)
 				],
 
 			})
@@ -40,7 +40,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`${client.allEmojis.x} Join __my__ Voice Channel!`)
+						.setTitle(`${client.allEmojis.x} Tham gia kênh thoại của __toi__`)
 						.setDescription(`<#${guild.me.voice.channel.id}>`)
 					],
 				});
@@ -68,8 +68,8 @@ module.exports = {
 					embeds: [new MessageEmbed()
 					  .setColor(ee.color)
 					  .setTimestamp()
-					  .setTitle(`🗑 **Cleared all Filters!**`)
-					  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+					  .setTitle(`🗑 **Đã loại bỏ tất cả bộ lọc!**`)
+					  .setFooter(`💢 Yêu cầu bởi: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
 				})
 			} catch (e) {
 				console.log(e.stack ? e.stack : e)
