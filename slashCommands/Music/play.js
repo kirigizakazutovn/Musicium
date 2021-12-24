@@ -17,13 +17,13 @@ module.exports = {
 		{
 			"String": {
 				name: "song",
-				description: "Which Song do you want to play",
+				description: "Bạn muốn chơi bài hát nào?Hãy nhập tên nó vào đây!",
 				required: true
 			}
 		}, //to use in the code: interacton.getString("title")
-		//{"User": { name: "ping_a_user", description: "To Ping a user lol", required: false }}, //to use in the code: interacton.getUser("ping_a_user")
+		//{"User": { name: "ping_a_user", description: "Để ping người dùng xD", required: false }}, //to use in the code: interacton.getUser("ping_a_user")
 		//{"Channel": { name: "in_where", description: "In What Channel should I send it?", required: false }}, //to use in the code: interacton.getChannel("what_channel")
-		//{"Role": { name: "what_role", description: "To Ping a Role lol", required: false }}, //to use in the code: interacton.getRole("what_role")
+		//{"Role": { name: "what_role", description: "Để ping role nha tụi bay :D", required: false }}, //to use in the code: interacton.getRole("what_role")
 		//{"IntChoices": { name: "what_ping", description: "What Ping do you want to get?", required: true, choices: [["Bot", 1], ["Discord Api", 2]] }}, //here the second array input MUST BE A NUMBER // TO USE IN THE CODE: interacton.getInteger("what_ping")
 		//{"StringChoices": { name: "what_ping", description: "What Ping do you want to get?", required: true, choices: [["Bot", "botping"], ["Discord Api", "api"]] }}, //here the second array input MUST BE A STRING // TO USE IN THE CODE: interacton.getString("what_ping")
 
@@ -63,7 +63,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`<:declined:780403017160982538> Your Voice Channel is full, I can't join!`)
+						.setTitle(`<:declined:780403017160982538> Kênh thoại đã quá tải,tôi không thể tham gia!`)
 					],
 					ephemeral: true
 				});
@@ -81,7 +81,7 @@ module.exports = {
 			const Text = options.getString("song"); //same as in StringChoices //RETURNS STRING 
 			//update it without a response!
 			await interaction.reply({
-				content: `🔍 Searching... \`\`\`${Text}\`\`\``,
+				content: `🔍 Đang tìm kiếm bài hát theo yêu cầu: \`\`\`${Text}\`\`\``,
 				ephemeral: true
 			});
 			try {
@@ -93,7 +93,7 @@ module.exports = {
 				await client.distube.playVoiceChannel(channel, Text, options)
 				//Edit the reply
 				interaction.editReply({
-					content: `${queue?.songs?.length > 0 ? "👍 Added" : "🎶 Now Playing"}: \`\`\`css\n${Text}\n\`\`\``,
+					content: `${queue?.songs?.length > 0 ? "👍 Đã thêm vào hàng đợi" : "🎶 Đang phát"}: \`\`\`css\n${Text}\n\`\`\``,
 					ephemeral: true
 				});
 			} catch (e) {
