@@ -12,7 +12,7 @@ module.exports = {
   usage: "dj <add/remove> <@Role>",
 
   cooldown: 1, //the command cooldown for execution & for helpcmd [OPTIONAL]
-  description: "Manages the Djs!", //the command description for helpcmd [OPTIONAL]
+  description: "Quản lý những DJs!", //the command description for helpcmd [OPTIONAL]
   memberpermissions: ["MANAGE_GUILD "], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
   requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
   alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -41,7 +41,7 @@ module.exports = {
           embeds: [new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${client.allEmojis.x} **Please add a __valid Method__+Role!**`)
+            .setTitle(`${client.allEmojis.x} **Vui lòng ping vai trò hợp lệ**`)
             .setDescription(`**Usage:**\n> \`${client.settings.get(message.guild.id, "prefix")}dj <add/remove> <@Role>\``)
           ],
         });
@@ -64,7 +64,7 @@ module.exports = {
               new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`${client.allEmojis.x} **This Role is already a DJ-ROLE!**`)
+              .setTitle(`${client.allEmojis.x} **Role này đã đc cấp quyền DJ**`)
             ],
           })
         }
@@ -77,7 +77,7 @@ module.exports = {
             new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${client.allEmojis.check_mark} **The Role \`${Role.name}\` got added to the ${client.settings.get(guild.id, "djroles").length - 1} DJ-Roles!**`)
+            .setTitle(`${client.allEmojis.check_mark} **Role  \`${Role.name}\` đã kích hoạt ${client.settings.get(guild.id, "djroles").length - 1} DJ-Roles!**`)
             .addField(`🎧 **DJ-Role${client.settings.get(guild.id, "djroles").length > 1 ? "s": ""}:**`, `>>> ${djs}`, true)
           ],
         })
