@@ -11,7 +11,7 @@ module.exports = {
   usage: `setupmusic`,
 
   cooldown: 10, //the command cooldown for execution & for helpcmd [OPTIONAL]
-  description: `Defines if Autoplay should be enabled on default or not!`, //the command description for helpcmd [OPTIONAL]
+  description: `Xác định xem có nên bật Tự động phát theo mặc định hay không!`, //the command description for helpcmd [OPTIONAL]
   memberpermissions: [`MANAGE_GUILD `], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
   requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
   alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -28,8 +28,8 @@ module.exports = {
       var embeds = [
         new MessageEmbed()
         .setColor(ee.color)
-        .setTitle(`📃 Queue of __${message.guild.name}__`)
-        .setDescription(`**Currently there are __0 Songs__ in the Queue**`)
+        .setTitle(`📃 Danh sách phát của __${message.guild.name}__`)
+        .setDescription(`**Hiện tại đang có 0 bài hát đang chơi**`)
         .setThumbnail(message.guild.iconURL({
           dynamic: true
         })),
@@ -41,8 +41,8 @@ module.exports = {
         .setImage(message.guild.banner ? message.guild.bannerURL({
           size: 4096
         }) : `https://imgur.com/jLvYdb4.png`)
-        .setTitle(`Start Listening to Music, by connecting to a Voice Channel and sending either the **SONG LINK** or **SONG NAME** in this Channel!`)
-        .setDescription(`> *I support <:Youtube:840260133686870036> Youtube, <:Spotify:846090652231663647> Spotify, <:soundcloud:825095625884434462> Soundcloud and direct MP3 Links!*`)
+        .setTitle(`Để bắt đầu nghe nhạc, bạn kết nối vào kênh thoại và nhập link bài hát/tên bài hát gửi vào kênh này để bắt đầu nghe nhạc!`)
+        .setDescription(`> *Tớ hỗ trợ <:Youtube:840260133686870036> Youtube, <:Spotify:846090652231663647> Spotify, <:soundcloud:825095625884434462> Soundcloud and direct MP3 Links!*`)
       ]
       var Emojis = [
         `0️⃣`,
