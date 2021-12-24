@@ -10,7 +10,7 @@ module.exports = {
   aliases: ["setprefix"],
   usage: "prefix <newPrefix>",
   cooldown: 1, //the command cooldown for execution & for helpcmd [OPTIONAL]
-  description: "Changes the Prefix of the Bot!", //the command description for helpcmd [OPTIONAL]
+  description: "Thay đổi tiền tố sever cho bot!", //the command description for helpcmd [OPTIONAL]
   memberpermissions: ["MANAGE_GUILD "], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
   requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
   alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -43,7 +43,7 @@ module.exports = {
           new MessageEmbed()
           .setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
-          .setTitle(`${client.allEmojis.check_mark} **The new Prefix is now: \`${newPrefix}\`**`)
+          .setTitle(`${client.allEmojis.check_mark} **Prefix mới là: \`${newPrefix}\`**`)
         ],
       })
     } catch (e) {
