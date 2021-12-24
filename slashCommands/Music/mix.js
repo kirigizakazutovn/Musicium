@@ -7,7 +7,7 @@ const ee = require("../../botconfig/embed.json");
 const settings = require("../../botconfig/settings.json");
 module.exports = {
 	name: "mix", //the command name for the Slash Command
-	description: "Plays a defined Mix", //the command description for Slash Command Overview
+	description: "Mix bài bạn thích", //the command description for Slash Command Overview
 	cooldown: 2,
 	requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 	alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -66,7 +66,7 @@ blues, oldgaming, pop, remixes, rock, strange-fruits-gaming
 			} = member.voice;
 			if (!channel) return interaction.reply({
 				embeds: [
-					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Please join ${guild.me.voice.channel ? "__my__" : "a"} VoiceChannel First!**`)
+					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Vui lòng tham gia kênh thoại ${guild.me.voice.channel ? "__my__" : "a"} trước!**`)
 				],
 				ephemeral: true
 			})
@@ -75,7 +75,7 @@ blues, oldgaming, pop, remixes, rock, strange-fruits-gaming
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`<:declined:780403017160982538> Your Voice Channel is full, I can't join!`)
+						.setTitle(`<:declined:780403017160982538> Kênh thoại đã quá tải,tôi không thể tham gia!!`)
 					],
 					ephemeral: true
 				});
@@ -136,7 +136,7 @@ blues, oldgaming, pop, remixes, rock, strange-fruits-gaming
 				await client.distube.playVoiceChannel(channel, link, options)
 				//Edit the reply
 				interaction.editReply({
-					content: `${queue?.songs?.length > 0 ? "👍 Loaded" : "🎶 Now Playing"}: the **'${args[0] ? args[0] : "Default"}'**`,
+					content: `${queue?.songs?.length > 0 ? "👍 Đã tải xong" : "🎶 Đang phát"}: the **'${args[0] ? args[0] : "Default"}'**`,
 					ephemeral: true
 				});
 			} catch (e) {
