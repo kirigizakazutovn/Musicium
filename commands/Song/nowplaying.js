@@ -13,7 +13,7 @@ module.exports = {
 	category: "Song",
 	usage: "nowplaying",
 	aliases: ["np", "current"],
-	description: "Shows the current Playing Song", //the command description for Slash Command Overview
+	description: "Hiển thị bài hát đang phát trong kênh thoại", //the command description for Slash Command Overview
 	cooldown: 5,
 	requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
 	alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -41,7 +41,7 @@ module.exports = {
 			} = member.voice;
 			if (!channel) return message.reply({
 				embeds: [
-					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Please join ${guild.me.voice.channel ? "__my__" : "a"} VoiceChannel First!**`)
+					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Vui lòng tham gia  ${guild.me.voice.channel ? "__my__" : "a"} kênh thoại!**`)
 				],
 
 			})
@@ -50,7 +50,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`${client.allEmojis.x} Join __my__ Voice Channel!`)
+						.setTitle(`${client.allEmojis.x} Tham gia kênh thoại của __tôi__ để sử dụng lệnh này!`)
 						.setDescription(`<#${guild.me.voice.channel.id}>`)
 					],
 				});
@@ -70,14 +70,14 @@ module.exports = {
 						new MessageEmbed().setColor(ee.color)
 						.setTitle(newTrack.name)
 						.setURL(newTrack.url)
-						.addField(`💡 Requested by:`, `>>> ${newTrack.user}`, true)
-						.addField(`⏱ Duration:`, `>>> \`${newQueue.formattedCurrentTime} / ${newTrack.formattedDuration}\``, true)
-						.addField(`🌀 Queue:`, `>>> \`${newQueue.songs.length} song(s)\`\n\`${newQueue.formattedDuration}\``, true)
-						.addField(`🔊 Volume:`, `>>> \`${newQueue.volume} %\``, true)
-						.addField(`♾ Loop:`, `>>> ${newQueue.repeatMode ? newQueue.repeatMode === 2 ? `${client.allEmojis.check_mark} \`Queue\`` : `${client.allEmojis.check_mark} \`Song\`` : `${client.allEmojis.x}`}`, true)
-						.addField(`↪️ Autoplay:`, `>>> ${newQueue.autoplay ? `${client.allEmojis.check_mark}` : `${client.allEmojis.x}`}`, true)
-						.addField(`❔ Download Song:`, `>>> [\`Click here\`](${newTrack.streamURL})`, true)
-						.addField(`❔ Filter${newQueue.filters.length > 0 ? "s": ""}:`, `>>> ${newQueue.filters && newQueue.filters.length > 0 ? `${newQueue.filters.map(f=>`\`${f}\``).join(`, `)}` : `${client.allEmojis.x}`}`, newQueue.filters.length > 1 ? false : true)
+						.addField(`💡 Yêu cầu bởi:`, `>>> ${newTrack.user}`, true)
+						.addField(`⏱ Thời hạn:`, `>>> \`${newQueue.formattedCurrentTime} / ${newTrack.formattedDuration}\``, true)
+						.addField(`🌀 Hàng đợi:`, `>>> \`${newQueue.songs.length} song(s)\`\n\`${newQueue.formattedDuration}\``, true)
+						.addField(`🔊 Âm lượng:`, `>>> \`${newQueue.volume} %\``, true)
+						.addField(`♾ Vòng:`, `>>> ${newQueue.repeatMode ? newQueue.repeatMode === 2 ? `${client.allEmojis.check_mark} \`Queue\`` : `${client.allEmojis.check_mark} \`Song\`` : `${client.allEmojis.x}`}`, true)
+						.addField(`↪️ Tự động phát:`, `>>> ${newQueue.autoplay ? `${client.allEmojis.check_mark}` : `${client.allEmojis.x}`}`, true)
+						.addField(`❔ Tải bài hát:`, `>>> [\`Click here\`](${newTrack.streamURL})`, true)
+						.addField(`❔ Bộ lọc : ${newQueue.filters.length > 0 ? "s": ""}:`, `>>> ${newQueue.filters && newQueue.filters.length > 0 ? `${newQueue.filters.map(f=>`\`${f}\``).join(`, `)}` : `${client.allEmojis.x}`}`, newQueue.filters.length > 1 ? false : true)
 						.addField(`<:Youtube:840260133686870036>  View${newTrack.views > 0 ? "s": ""}:`, `>>> \`${newTrack.views}\``, true)
 						.addField(`:thumbsup: Like${newTrack.likes > 0 ? "s": ""}:`, `>>> \`${newTrack.likes}\``, true)
 						.addField(`:thumbsdown: Dislike${newTrack.dislikes > 0 ? "s": ""}:`, `>>> \`${newTrack.dislikes}\``, true)
