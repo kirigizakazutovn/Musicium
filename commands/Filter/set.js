@@ -41,7 +41,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`${client.allEmojis.x} Join __my__ Voice Channel!`)
+						.setTitle(`${client.allEmojis.x} Tham gia kênh thoại của __toi__`)
 						.setDescription(`<#${guild.me.voice.channel.id}>`)
 					],
 				});
@@ -59,7 +59,7 @@ module.exports = {
 						embeds: [new MessageEmbed()
 							.setColor(ee.wrongcolor)
 							.setFooter(ee.footertext, ee.footericon)
-							.setTitle(`${client.allEmojis.x}**You are not a DJ and not the Song Requester!**`)
+							.setTitle(`${client.allEmojis.x}**Bạn không phải là DJ và người yêu cầu bài hát cho nên bạn không thể sự dụng lệnh này!**`)
 							.setDescription(`**DJ-ROLES:**\n> ${check_if_dj(client, member, newQueue.songs[0])}`)
 						],
 					});
@@ -73,7 +73,7 @@ module.exports = {
 							.setFooter(ee.footertext, ee.footericon)
 							.setTitle(`${client.allEmojis.x} **You added at least one Filter, which is invalid!**`)
 							.setDescription("**To define Multiple Filters add a SPACE (` `) in between!**")
-							.addField("**All Valid Filters:**", Object.keys(FiltersSettings).map(f => `\`${f}\``).join(", ") + "\n\n**Note:**\n> *All filters, starting with custom are having there own Command, please use them to define what custom amount u want!*")
+							.addField("**Tất cả các bộ lọc (cơ bản và nâng cao)**", Object.keys(FiltersSettings).map(f => `\`${f}\``).join(", ") + "\n\n**Note:**\n> *All filters, starting with custom are having there own Command, please use them to define what custom amount u want!*")
 						],
 					})
 				}
@@ -101,8 +101,8 @@ module.exports = {
 					embeds: [new MessageEmbed()
 					  .setColor(ee.color)
 					  .setTimestamp()
-					  .setTitle(`♨️ **Set ${amount} Filters!**`)
-					  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+					  .setTitle(`♨️ **Đã thiết lập ${amount} bộ lọc!**`)
+					  .setFooter(`💢 Yêu cầu bởi: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
 				})
 			} catch (e) {
 				console.log(e.stack ? e.stack : e)
