@@ -82,7 +82,7 @@ module.exports = {
             new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${client.allEmojis.check_mark} **The Channel \`${Channel.name}\` got added to the ${client.settings.get(guild.id, "djroles").length - 1} whitelisted Bot-Channels!**`)
+            .setTitle(`${client.allEmojis.check_mark} **Kênh\`${Channel.name}\` đã kích hoạt ${client.settings.get(guild.id, "djroles").length - 1} !**`)
             .addField(`🎧 **Bot-Channel${client.settings.get(guild.id, "botchannel").length > 1 ? "s": ""}:**`, `>>> ${djs}`, true)
           ],
         })
@@ -93,7 +93,7 @@ module.exports = {
               new MessageEmbed()
               .setColor(ee.wrongcolor)
               .setFooter(ee.footertext, ee.footericon)
-              .setTitle(`${client.allEmojis.x} **This Channel is not a whitelisted Bot-Channel yet!**`)
+              .setTitle(`${client.allEmojis.x} **Kênh này chưa được kích hoạt nha cưng :D**`)
             ],
           })
         }
@@ -106,7 +106,7 @@ module.exports = {
             new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`${client.allEmojis.check_mark} **The Channel \`${Channel.name}\` got removed from the ${client.settings.get(guild.id, "djroles").length} whitelisted Bot-Channels!**`)
+            .setTitle(`${client.allEmojis.check_mark} **Kênh \`${Channel.name}\` đã bị loại bỏ ${client.settings.get(guild.id, "djroles").length} khỏi Chatbot!**`)
             .addField(`🎧 **Bot-Channel${client.settings.get(guild.id, "botchannel").length > 1 ? "s": ""}:**`, `>>> ${djs}`, true)
           ],
         })
