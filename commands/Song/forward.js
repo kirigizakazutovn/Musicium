@@ -41,7 +41,7 @@ module.exports = {
 			} = member.voice;
 			if (!channel) return message.reply({
 				embeds: [
-					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Please join ${guild.me.voice.channel ? "__my__" : "a"} VoiceChannel First!**`)
+					new MessageEmbed().setColor(ee.wrongcolor).setTitle(`${client.allEmojis.x} **Vui lòng tham gia ${guild.me.voice.channel ? "__my__" : "a"} kênh thoại trước!**`)
 				],
 
 			})
@@ -50,7 +50,7 @@ module.exports = {
 					embeds: [new MessageEmbed()
 						.setColor(ee.wrongcolor)
 						.setFooter(ee.footertext, ee.footericon)
-						.setTitle(`${client.allEmojis.x} Join __my__ Voice Channel!`)
+						.setTitle(`${client.allEmojis.x} Tham gia __kênh thoại của tôi__ !`)
 						.setDescription(`<#${guild.me.voice.channel.id}>`)
 					],
 				});
@@ -93,8 +93,8 @@ module.exports = {
 					embeds: [new MessageEmbed()
 					  .setColor(ee.color)
 					  .setTimestamp()
-					  .setTitle(`⏩ **Forwarded the song for \`${seekNumber} Seconds\`!**`)
-					  .setFooter(`💢 Action by: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
+					  .setTitle(`⏩ **Đã chuyển tiếp bài hát cho \`${seekNumber} \`!**`)
+					  .setFooter(`💢 Hành động bởi: ${member.user.tag}`, member.user.displayAvatarURL({dynamic: true}))]
 				})
 			} catch (e) {
 				console.log(e.stack ? e.stack : e)
