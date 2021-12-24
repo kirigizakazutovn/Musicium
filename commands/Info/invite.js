@@ -12,7 +12,7 @@ module.exports = {
   aliases: ["inviteme", "addme", ],
 
   cooldown: 5, //the command cooldown for execution & for helpcmd [OPTIONAL]
-  description: "Sends you an invite link", //the command description for helpcmd [OPTIONAL]
+  description: "Cảm ơn vì đã tin tưởng sử dụng bot!", //the command description for helpcmd [OPTIONAL]
   memberpermissions: [], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
   requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
   alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
@@ -22,7 +22,7 @@ module.exports = {
         embeds: [
           new MessageEmbed().setColor(ee.color)
           .setFooter(ee.footertext, ee.footericon)
-          .setDescription(`[**Click here to invite me!**](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands)\n\n||[**Click here to invite me __without__ Slash Commands!**](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot)||`)
+          .setDescription(`[**Click vô để mời tớ!**](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot%20applications.commands)\n\n||[**Click here to invite me __without__ Slash Commands!**](https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot)||`)
         ]
       });
     } catch (e) {
