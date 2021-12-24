@@ -40,10 +40,10 @@ const client = new Discord.Client({
     ],
     presence: {
       activity: {
-        name: `+help | musicium.eu`, 
+        name: `+help | rebootdiscord-vn.blogspot.com`, 
         type: "PLAYING", 
       },
-      status: "online"
+      status: "idle"
     }
 });
 //BOT CODED BY: Tomato#6966
