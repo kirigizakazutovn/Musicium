@@ -23,7 +23,7 @@ module.exports = {
           .setFooter(message.guild.name, message.guild.iconURL({
             dynamic: true
           }))
-          .setTitle(`${client.allEmojis.x} Only \`Tomato#6966\` is allowed to execute this Code`)
+          .setTitle(`${client.allEmojis.x} Chỉ \`RebootDiscord#4827\` mới có quyền!`)
         ]
       });
     if (!args[0])
